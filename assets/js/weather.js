@@ -1,3 +1,5 @@
+var myModal = new bootstrap.Modal(document.getElementById('weather-image-modal'));
+
 const apiKey = "161e5b665cfcc054c25965cc7b8781e1";
 const apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
@@ -9,6 +11,8 @@ searchButton.addEventListener("click", () => {
   const city = inputCity.value;
   getWeather(city);
 });
+
+
 
 async function getWeather(city) {
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -45,5 +49,8 @@ async function getWeather(city) {
       "./assets/images/svg/element-forecast-storm-stormy-thunder-svgrepo-com.svg";
   }
 }
+
+
+
 
 // https://api.openweathermap.org/data/2.5/weather?q=calgary&appid=9d5291fe7526d88330f35a346c100d42&units=metric

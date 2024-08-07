@@ -26,7 +26,8 @@ aside {
 }
 
 .weather {
-  background-color: indigo;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/sky-1.jpg");
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -36,6 +37,8 @@ aside {
   margin-bottom: 10px;
   margin-right: auto;
   font-size: 1rem;
+  border-radius: 0 0 2rem 0;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .add-links {
