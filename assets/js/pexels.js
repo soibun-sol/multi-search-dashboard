@@ -1,13 +1,35 @@
 // private API key for Pexels - 20,000 requests per month max
 const pexelsApiKey = "52YGXaVMgHkYq4IrAOHTvkECCHfOPSVZv9KvzJCcNcSZhLSW8W9vicIx";
 
+const backgroundImage = document.getElementById("hero-weather-img");
+const citySearchButton = document.getElementById("city-search-btn");
+
+// function to retrive weather data from local storage - called in fetchData function
+function retrieveWeatherData() {
+  // Retrieve the weather data from local storage
+  const weatherData = localStorage.getItem("weatherData");
+  if (weatherData) {
+    return JSON.parse(weatherData);
+  }
+}
+
 // Fetch data from Pexels API
 // query will be generated from the weather data api when it calls for weather data
 // temporary query can be manually set for testing
-async function fetchData(query = "Miami") {
+async function fetchData(weatherDescription = "") {
+  // first fetch the weather data from local storage
+  const weatherData = retrieveWeatherData() || {};
+  console.log("Weather Data: ", weatherData);
+  let descriptionQuery = weatherData.weather[0].description;
+  // check if the function is called with a weather description
+  // if not, use the weather data from the local storage
+  if (weatherDescription !== "") {
+    descriptionQuery = weatherDescription;
+  }
+
   try {
     const response = await fetch(
-      `https://api.pexels.com/v1/search?query=${query}&per_page=1`,
+      `https://api.pexels.com/v1/search?query=picture+of+sky+${descriptionQuery}&per_page=8`,
       {
         // authentication headers for Pexels API
         headers: {
@@ -31,3 +53,9 @@ async function fetchData(query = "Miami") {
 }
 // pexels Api function
 fetchData();
+
+// Add listener to call function when search button is clicked
+citySearchButton.addEventListener("click", () => {
+  const description = "Beautiful Sunset";
+  fetchData(description);
+});
