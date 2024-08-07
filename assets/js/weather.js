@@ -1,5 +1,3 @@
-var myModal = new bootstrap.Modal(document.getElementById('weather-image-modal'));
-
 const apiKey = "161e5b665cfcc054c25965cc7b8781e1";
 const apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
