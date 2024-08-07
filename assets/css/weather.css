@@ -1,0 +1,48 @@
+.svg-icon {
+  display: inline-block;
+  max-width: 50px;
+  max-height: 50px;
+  filter: brightness(100%) saturate(100%) invert(100%);
+}
+
+.weather-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.weather .weather-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.weather .weather-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 1rem 0;
+  padding: 0;
+}
+
+.weather .weather-row button img {
+  max-width: 20px;
+  max-height: 20px;
+  object-fit: cover;
+}
+
+.weather .hidden-weather {
+  display: flex;
+  /* We will reduce the .weather height when this is hidden */
+}
+
+.weather img.city-weather-icon-result {
+  height: 4rem;
+  width: 4rem;
+}
