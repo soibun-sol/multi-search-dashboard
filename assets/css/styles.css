@@ -1,0 +1,42 @@
+.hero-weather {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hero-weather img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+aside {
+    height: 40vh;
+}
+
+.weather {
+    background-color: indigo;
+
+}
+
+.add-links {
+    background-color: orange ;
+
+}
+
+.links {
+    background-color: rgb(22, 130, 0);
+ 
+}
+
