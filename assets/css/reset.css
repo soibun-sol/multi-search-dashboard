@@ -1,0 +1,78 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Color and typography variables */
+:root {
+  /* Light theme colors */
+  --light-bg: #f8f9fa;
+  --light-text: #212529;
+  --light-highlight: #ffd166;
+  --light-accent: #3653d6;
+
+  /* Dark theme colors */
+  --dark-bg: #1a1b1e;
+  --dark-text: #e9ecef;
+  --dark-highlight: #4cc9f0;
+  --dark-accent: #8dfc26;
+
+  /* Common colors */
+  --success: #2ec4b6;
+  --success-bg: #d1f0ed;
+  --warning: #ffd166;
+  --warning-bg: #fff3d9;
+  --error: #ef476f;
+  --error-bg: #fde0e6;
+
+  /* Font variables */
+  --code-font: "Nanum Gothic Coding", monospace;
+  --body-font: "League Spartan", sans-serif;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Animation settings */
+  --transition-duration: 1s;
+  --transition-timing: ease;
+}
+
+/* Basic element resets */
+body {
+  line-height: 1.5;
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Any image, video, or canvas will be responsive and not overflow its container */
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form elements will inherit the font of their parent */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Ensure text wrapping */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
