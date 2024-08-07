@@ -1,11 +1,18 @@
 .svg-icon {
   display: inline-block;
-  max-width: 20px;
-  max-height: 20px;
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(100%)
-    hue-rotate(346deg) contrast(108%);
+  max-width: 50px;
+  max-height: 50px;
+  filter: brightness(100%) saturate(100%) invert(100%);
 }
 
+.weather-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
 .weather .weather-row {
   display: flex;
   flex-direction: row;
@@ -20,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin: 1rem auto 1rem 0;
   padding: 0;
 }
 
@@ -31,7 +38,7 @@
 }
 
 .weather .hidden-weather {
-  /* display: none; */
+  display: flex;
   /* We will reduce the .weather height with bootstrap when this is hidden ie. h-25 */
 }
 

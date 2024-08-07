@@ -62,45 +62,47 @@
         <!-- this is the page wrapper -->
 
         <aside class="col-4">
-          <section class="weather row h-100">
-            <label for="city">SEARCH WEATHER BY CITY:</label>
-            <div class="weather-row">
-              <input
-                id="city"
-                name="city"
-                spellcheck="false"
-                placeholder="Enter City Name"
-              />
-              <button id="city-search-btn">
-                <img src="./assets/images/search.png" alt="Search Button" />
-              </button>
-            </div>
-            <!-- Weather City Search Bar End -->
-            <div class="hidden-weather">
-              <div class="weather-column">
-                <h3 id="city-name">CITY</h3>
-                <h2 id="city-temp">
-                  Number
+          <section class="weather row h-150">
+            <div class="weather-wrapper">
+              <label for="city">SEARCH WEATHER BY CITY:</label>
+              <div class="weather-row">
+                <input
+                  id="city"
+                  name="city"
+                  spellcheck="false"
+                  placeholder="Enter City Name"
+                />
+                <button id="city-search-btn">
+                  <img src="./assets/images/search.png" alt="Search Button" />
+                </button>
+              </div>
+              <!-- Weather City Search Bar End -->
+              <section class="hidden-weather">
+                <div class="weather-column">
+                  <h3 id="city-name">CITY</h3>
+                  <h2 id="city-temp">
+                    Number
+                    <img
+                      class="svg-icon"
+                      src="./assets/images/svg/selsius-temperature-weather-svgrepo-com.svg"
+                    />
+                  </h2>
+
                   <img
                     class="svg-icon"
-                    src="./assets/images/svg/selsius-temperature-weather-svgrepo-com.svg"
+                    id="city-weather-icon"
+                    class="city-weather-icon-result"
+                    src="./assets/images/clear.png"
                   />
-                </h2>
 
-                <img
-                  class="svg-icon"
-                  id="city-weather-icon"
-                  class="city-weather-icon-result"
-                  src="./assets/images/clear.png"
-                />
-              </div>
-              <div class="weather-column">
-                <h4 id="city-weather-description">Clear</h4>
-                <h4>Humidity: <span id="city-humidity">50%</span></h4>
-                <h4>Wind: <span id="city-wind">10km/h</span></h4>
-              </div>
+                  <h4 id="city-weather-description">Clear</h4>
+                  <h4>Humidity: <span id="city-humidity">50%</span></h4>
+                  <h4>Wind: <span id="city-wind">10km/h</span></h4>
+                </div>
+              </section>
+              <!-- end of hidden weather -->
             </div>
-            <!-- end of hidden weather -->
+            <!-- end of weather wrapper-->
           </section>
 
           <section class="add-links">
