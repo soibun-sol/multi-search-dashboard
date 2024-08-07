@@ -39,7 +39,7 @@
 
 .weather .hidden-weather {
   display: flex;
-  /* We will reduce the .weather height with bootstrap when this is hidden ie. h-25 */
+  /* We will reduce the .weather height when this is hidden */
 }
 
 .weather img.city-weather-icon-result {
