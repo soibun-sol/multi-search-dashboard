@@ -1,0 +1,67 @@
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    margin-top: 4%; 
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.add-links .user-input {
+    font-size:22px;
+    float: left;
+    margin-top: 2%;
+    margin-right: auto;
+    color: white;
+    padding: 10px;
+}
+
+label { 
+    font-size: 25px;
+    margin-bottom: 4%;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.add-links .user-input #link-name{
+    text-align: left;
+    color: black;
+    background-color: whitesmoke;
+    justify-content: flex-start;
+    display: table-row;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-family: monospace
+}
+
+.add-links .user-input #link-url{
+    text-align: left;
+    color: black;
+    background-color: whitesmoke;
+    justify-content: flex-start;
+    display: table-row;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-family: monospace
+}
+
+.add-links .user-input #link-icon{
+    text-align: left;
+    color: black;
+    background-color: whitesmoke;
+    justify-content: flex-start;
+    display: table-row;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-family: monospace
+}
+
+#add-link{
+    text-align: center;
+    color: black;
+    font-size: 22px;
+    margin-bottom: 10%;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: .25rem .25rem 2.5rem rgba(0,0,0,0.5);
+}
+
