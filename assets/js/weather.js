@@ -1,57 +1,110 @@
 // The following link is an example of the Weather API call for Calgary
 // https://api.openweathermap.org/data/2.5/weather?q=calgary&appid=9d5291fe7526d88330f35a346c100d42&units=metric
 //
-//
+
+// This is the weather js file that controls the weather api calls.
+// A first time visitor is greeted with the defauly sky image
+// Local storage is checked for the last city searched if there is no local lastCity value then
+// the geolocation API attempts to get the user's current location and save it to local storage
+// The weather API is called using the geolocation data
+// The weather data is saved to local storage
+// The weather data is displayed on the page
+// The user can search for a new city and the weather data is displayed on the page
+// When they do, the weather data is saved to local storage and displayed on the page for the new city
+// When the user returns to the page, the last city searched is displayed on the page
+
 // Weather API: https://openweathermap.org/api - 60 requests per minute max
+
+// Private API key for OpenWeatherMap
 const apiKey = "161e5b665cfcc054c25965cc7b8781e1";
 const apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
 
 // Get the elements from the DOM
-const inputCity = document.getElementById("city");
+const inputLocationQuery = document.getElementById("city");
 const searchButton = document.getElementById("city-search-btn");
 const weatherIcon = document.getElementById("city-weather-icon");
+
+// use the geolocation API to attempt to get the user's current location
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    // console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+
+    // save latitude and longitude to local storage
+    localStorage.setItem("latitude", latitude);
+    localStorage.setItem("longitude", longitude);
+    // console.log("Latitude and Longitude Saved: ", latitude, longitude);
+  });
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
+
+// function to get the weather data using the geolocation API - if user agrees to share location
+async function useGeolocation() {
+  // check local storage for the latitude and longitude
+  const latitude = localStorage.getItem("latitude");
+  const longitude = localStorage.getItem("longitude");
+
+  const lastCity = localStorage.getItem("lastCity");
+  if (lastCity) {
+    getWeather(lastCity);
+  } else if (latitude && longitude) {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
+    const response = await fetch(apiUrl + `&appid=${apiKey}`);
+
+    var data = await response.json();
+    // console.log("Geolocated weather Data: ", data);
+
+    // extract the city name, state code, and country code from the weather data
+    const cityName = data.name;
+
+    saveCity(cityName);
+    // console.log("Geolocated City Saved: ", cityName);
+
+    // save the weather data to local storage
+    saveWeatherData(data);
+    // console.log("Geolocated Weather Data Saved: ", data);
+
+    // call the getWeather function to display the weather data
+    getWeather(cityName);
+  }
+}
 
 function saveCity(city) {
   // Save the city to local storage
   localStorage.setItem("lastCity", city);
 }
 
-function getLastCity() {
-  // Grab local storage for the last searched city
-  const lastCity = localStorage.getItem("lastCity");
-  if (lastCity) {
-    getWeather(lastCity);
-  }
-}
-
 function saveWeatherData(data) {
   // Save the weather data to local storage
   localStorage.setItem("weatherData", JSON.stringify(data));
-  console.log("Weather Data Saved: ", data);
+  // console.log("Weather Data Saved: ", data);
 }
 
 // add listener to search button to activate getWeather function and API call
 searchButton.addEventListener("click", () => {
-  const city = inputCity.value;
+  const city = inputLocationQuery.value;
   getWeather(city);
 });
 
 async function getWeather(city) {
   // fetch the weather data from the API -> await the response -> convert the response to JSON
+  // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
   var data = await response.json();
 
-  console.log("Get weather Data: ", data);
+  // console.log("City search weather Data: ", data);
 
   // save the city to local storage
   saveCity(city);
-  console.log("City Saved: ", city);
+  // console.log("City Saved: ", city);
   // save the weather data to local storage
   saveWeatherData(data);
-  console.log("Weather Data Saved: ", data);
+  // console.log("Weather Data Saved: ", data);
 
-  
   // attach the data to the proper DOM elements
   document.getElementById("city-name").innerHTML = data.name;
 
@@ -97,4 +150,4 @@ async function getWeather(city) {
   }
 }
 
-getLastCity();
+useGeolocation();
