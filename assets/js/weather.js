@@ -116,6 +116,18 @@ async function getWeather(city) {
 
   document.getElementById("city-wind").innerHTML = `${data.wind.speed} km/h`;
 
+  document.getElementById(
+    "city-temp-feel"
+  ).innerHTML = `${data.main.feels_like}°C`;
+
+  document.getElementById(
+    "city-temp-low"
+  ).innerHTML = `${data.main.temp_min}°C`;
+
+  document.getElementById(
+    "city-temp-high"
+  ).innerHTML = `${data.main.temp_max}°C`;
+
   // if block - could be a switch statement
   // set the weather icon based on the weather data
   if (data.weather[0].main === "Clouds") {

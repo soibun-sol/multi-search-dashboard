@@ -29,7 +29,7 @@ async function fetchData(weatherDescription = "") {
 
   try {
     const response = await fetch(
-      `https://api.pexels.com/v1/search?query=picture+of+sky+${descriptionQuery}&per_page=8`,
+      `https://api.pexels.com/v1/search?query=landscape+photograph+of+sky+${descriptionQuery}&per_page=50`,
       {
         // authentication headers for Pexels API
         headers: {
@@ -45,6 +45,7 @@ async function fetchData(weatherDescription = "") {
       const weatherPhotoLink = data.photos[randomIndex].src.original;
       console.log(weatherPhotoLink);
       document.getElementById("hero-weather-img").src = weatherPhotoLink;
+      document.getElementById("photo-modal-image").src = weatherPhotoLink;
     }
   } catch (error) {
     // Log any errors to the console

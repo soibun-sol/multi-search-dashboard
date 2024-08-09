@@ -1,3 +1,7 @@
+header img {
+  justify-content: flex-end;
+}
+
 .hero-weather {
   height: 100vh;
   width: 100%;
@@ -51,7 +55,7 @@ aside {
   margin-right: auto;
   font-size: 1rem;
   border-radius: 0 2rem 0 0;
-  box-shadow: 1rem .05rem 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .links {
