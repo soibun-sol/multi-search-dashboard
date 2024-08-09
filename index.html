@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/weather.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/add-links.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/add-links.css" />
   </head>
 
   <body>
@@ -40,11 +40,16 @@
               <ul class="dropdown-menu text-small shadow">
                 <li>
                   <a class="dropdown-item active" href="#" aria-current="page"
-                    >Overview</a
+                    >ABOUT MULTI-SEARCH DASHBOARD</a
                   >
                 </li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Reports</a></li>
+
+                <li>
+                  <button id="hide-weather-deatils">
+                    HIDE WEATHER DETAILS
+                  </button>
+                </li>
               </ul>
             </div>
 
@@ -71,6 +76,7 @@
         <aside class="col-4">
           <section class="weather row h-150">
             <div class="weather-wrapper">
+              <p>getDate() and Time:00 pm</p>
               <label for="city">SEARCH WEATHER BY CITY:</label>
               <div class="weather-row">
                 <input
@@ -82,6 +88,13 @@
                 <button id="city-search-btn">
                   <img src="./assets/images/search.png" alt="Search Button" />
                 </button>
+                <button id="change-background-btn">CHANGE BACKGROUND</button>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#weather-image-modal"
+                  >Open Photo Details Modal</a
+                >
               </div>
               <!-- Weather City Search Bar End -->
               <section class="hidden-weather">
@@ -105,12 +118,9 @@
                   <h4 id="city-weather-description">Clear</h4>
                   <h4>Humidity: <span id="city-humidity">50%</span></h4>
                   <h4>Wind: <span id="city-wind">10km/h</span></h4>
-                  <a
-                    href="#"
-                    data-bs-toggle="modal"
-                    data-bs-target="#weather-image-modal"
-                    >Open Weather Details Modal</a
-                  >
+                  <h4>Feels Like: <span id="city-temp-feel">5 deg C</span></h4>
+                  <h4>Temp. High: <span id="city-temp-high">50 deg C</span></h4>
+                  <h4>Temp. Low: <span id="city-temp-low">1 deg C</span></h4>
                 </div>
               </section>
               <!-- end of hidden weather -->
@@ -123,15 +133,19 @@
             <h3>Add Your Links</h3>
             <div class="user-input">
               <label for="link-name">Name of Website/Link:</label>
-              <input type="text" id="link-name" placeholder="Enter website name">
+              <input
+                type="text"
+                id="link-name"
+                placeholder="Enter website name"
+              />
             </div>
             <div class="user-input">
               <label for="link-url">Website URL/Link:</label>
-              <input type="url" id="link-url" placeholder="Enter website URL">
+              <input type="url" id="link-url" placeholder="Enter website URL" />
             </div>
             <div class="user-input">
               <label for="link-icon">Image-Icon-Link:</label>
-              <input type="url" id="link-icon" placeholder="Enter icon URL">
+              <input type="url" id="link-icon" placeholder="Enter icon URL" />
             </div>
             <button id="add-link">Create Dashboard Link</button>
           </section>
@@ -141,7 +155,6 @@
             <!-- User-added links will be inserted here -->
           </section>
           <!-- End of Input Dashboard Links Section -->
-        
         </main>
       </div>
     </div>
@@ -173,11 +186,12 @@
           </div>
           <div class="modal-body">
             <p>
-              This is a more detailed weather report describing the image that
-              is being displayed
+              This is a more detailed photo report describing the image that is
+              being displayed.
             </p>
             <div>
               <img
+                id="photo-modal-image"
                 class="img-fluid"
                 src="./assets/images/sky-1.jpg"
                 alt="Current Weather Image"
