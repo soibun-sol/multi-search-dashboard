@@ -16,15 +16,18 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/weather.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/add-links.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/toggle-button.css" />
   </head>
 
   <body>
+
+  </div>
     <header>
       <nav>
-        <header class="py-3 mb-3 border-bottom">
+        <header class="py-2 mb-1 ">
           <div
-            class="container-fluid d-grid gap-3 align-items-center"
-            style="grid-template-columns: 3fr 1fr"
+            class="container-fluid d-grid gap-3 align-items-center border-bottom"
+            style="grid-template-columns: 4fr .2fr"
           >
             <div class="dropdown">
               <a
@@ -33,7 +36,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <svg class="bi me-2" width="40" height="32">
+               <svg class="bi me-2" width="40" height="32">
                   <use xlink:href="#bootstrap"></use>
                 </svg>
               </a>
@@ -51,14 +54,16 @@
                   </button>
                 </li>
               </ul>
-            </div>
 
-            <div class="d-flex align-items-center">
-              <img
-                style="max-width: 30px; width: 30px"
-                src="./assets/images/clear.png"
-              />
             </div>
+          </div>
+
+          <div class="toggle-container" id="toggle">
+            <input type="checkbox" id="mode-toggle" class="mode-toggle">
+            <label for="mode-toggle" class="toggle-label">
+                <span class="toggle-text">🌞</span>
+                <span class="toggle-text">🌜</span>
+            </label>
           </div>
         </header>
       </nav>
@@ -74,7 +79,7 @@
         <!-- this is the page wrapper -->
 
         <aside class="col-4">
-          <section class="weather row h-150">
+          <section class="weather col-lg-7 col-sm- row h-150">
             <div class="weather-wrapper">
               <p>getDate() and Time:00 pm</p>
               <label for="city">SEARCH WEATHER BY CITY:</label>
@@ -88,13 +93,18 @@
                 <button id="city-search-btn">
                   <img src="./assets/images/search.png" alt="Search Button" />
                 </button>
-                <button id="change-background-btn">CHANGE BACKGROUND</button>
+                </div>
+                <div>
+                  <button id="change-background-btn">CHANGE BACKGROUND</button>
+                </div>  
+               <div>
                 <a
                   href="#"
                   data-bs-toggle="modal"
                   data-bs-target="#weather-image-modal"
                   >Open Photo Details Modal</a
                 >
+
               </div>
               <!-- Weather City Search Bar End -->
               <section class="hidden-weather">
@@ -129,7 +139,7 @@
           </section>
 
           <!-- Start of Input Dashboard Links Section -->
-          <section class="add-links">
+          <section class="add-links col-7 ">
             <h3>Add Your Links</h3>
             <div class="user-input">
               <label for="link-name">Name of Website/Link:</label>
@@ -149,8 +159,8 @@
             </div>
             <button id="add-link">Create Dashboard Link</button>
           </section>
-        </aside>
-        <main class="links col-8">
+      </aside>  
+        <main class="links">
           <section class="links" id="user-links">
             <!-- User-added links will be inserted here -->
           </section>
@@ -202,7 +212,7 @@
       </div>
     </div>
     <!-- end of modal -->
-
+  
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -212,5 +222,6 @@
     <script src="./assets/js/pexels.js"></script>
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/logic.js"></script>
+    <script src="assets/js/toggle-button.js"></script>
   </body>
 </html>
