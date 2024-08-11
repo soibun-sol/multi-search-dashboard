@@ -39,20 +39,18 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <svg class="bi me-2" width="40" height="32">
-                  <use xlink:href="#bootstrap"></use>
-                </svg>
+                DETAILS
               </a>
               <ul class="dropdown-menu text-small shadow">
                 <li>
-                  <a class="dropdown-item active" href="#" aria-current="page"
+                  <a class="dropdown-item" href="#" aria-current="page"
                     >ABOUT MULTI-SEARCH DASHBOARD</a
                   >
                 </li>
                 <li><hr class="dropdown-divider" /></li>
 
                 <li>
-                  <button id="hide-weather-deatils">
+                  <button id="hidden-weather-button">
                     HIDE WEATHER DETAILS
                   </button>
                 </li>
@@ -84,7 +82,7 @@
           <section class="weather col-7 row h-150">
             <div class="weather-wrapper">
               <div class="weather-column">
-                <h3>getDate() and Time:00 pm</h3>
+                <h3 id="current-date">getFormattedDate()</h3>
                 <div class="weather-row">
                   <input
                     id="city"
