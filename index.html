@@ -16,20 +16,21 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/weather.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/add-links.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/toggle-button.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/css/toggle-button.css"
+    />
     <link rel="stylesheet" type="text/css" href="./assets/css/url-link.css" />
-
   </head>
 
   <body>
-
-  </div>
     <header>
       <nav>
-        <header class="py-2 mb-1 ">
+        <header class="py-2 mb-1">
           <div
             class="container-fluid d-grid gap-3 align-items-center border-bottom"
-            style="grid-template-columns: 4fr .2fr"
+            style="grid-template-columns: 4fr 0.2fr"
           >
             <div class="dropdown">
               <a
@@ -38,7 +39,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-               <svg class="bi me-2" width="40" height="32">
+                <svg class="bi me-2" width="40" height="32">
                   <use xlink:href="#bootstrap"></use>
                 </svg>
               </a>
@@ -56,15 +57,14 @@
                   </button>
                 </li>
               </ul>
-
             </div>
           </div>
 
           <div class="toggle-container" id="toggle">
-            <input type="checkbox" id="mode-toggle" class="mode-toggle">
+            <input type="checkbox" id="mode-toggle" class="mode-toggle" />
             <label for="mode-toggle" class="toggle-label">
-                <span class="toggle-text">🌞</span>
-                <span class="toggle-text">🌜</span>
+              <span class="toggle-text">🌞</span>
+              <span class="toggle-text">🌜</span>
             </label>
           </div>
         </header>
@@ -81,53 +81,74 @@
         <!-- this is the page wrapper -->
 
         <aside class="col-4">
-          <section class="weather col-lg-7 col-sm- row h-150">
+          <section class="weather col-7 row h-150">
             <div class="weather-wrapper">
-              <p>getDate() and Time:00 pm</p>
-              <label for="city">SEARCH WEATHER BY CITY:</label>
-              <div class="weather-row">
-                <input
-                  id="city"
-                  name="city"
-                  spellcheck="false"
-                  placeholder="Enter City Name"
-                />
-                <button id="city-search-btn">
-                  <img src="./assets/images/search.png" alt="Search Button" />
-                </button>
+              <div class="weather-column">
+                <h3>getDate() and Time:00 pm</h3>
+                <div class="weather-row">
+                  <input
+                    id="city"
+                    name="city"
+                    spellcheck="false"
+                    placeholder="Enter City Name"
+                  />
+                  <button id="city-search-btn">
+                    <img
+                      src="./assets/images/search-icon.png"
+                      alt="Search Button"
+                    />
+                  </button>
                 </div>
-                <div>
-                  <button id="change-background-btn">CHANGE BACKGROUND</button>
-                </div>  
-               <div>
-                <a
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#weather-image-modal"
-                  >Open Photo Details Modal</a
-                >
 
+                <div class="weather-row details">
+                  <div class="weather-column">
+                    <h3 id="city-name">CITY</h3>
+                    <h2 id="city-temp">
+                      Number
+                      <img
+                        class="svg-icon"
+                        src="./assets/images/svg/selsius-temperature-weather-svgrepo-com.svg"
+                      />
+                    </h2>
+                  </div>
+                  <div class="weather-column">
+                    <img
+                      class="svg-icon"
+                      id="city-weather-icon"
+                      class="city-weather-icon-result"
+                      src="./assets/images/clear.png"
+                    />
+
+                    <h4 id="city-weather-description">Clear</h4>
+                  </div>
+                </div>
+                <div class="weather-row">
+                  CHANGE BACKGROUND
+                  <button id="change-background-btn">
+                    <img
+                      src="./assets/images/svg/change.svg"
+                      alt="Change Background"
+                    />
+                  </button>
+                </div>
+
+                <div class="weather-row">
+                  <p>SHOW PHOTO DETAILS</p>
+
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#weather-image-modal"
+                  >
+                    <button id="show-weather-details">
+                      <img src="./assets/images/photo_details.png" /></button
+                  ></a>
+                </div>
               </div>
+
               <!-- Weather City Search Bar End -->
               <section class="hidden-weather">
                 <div class="weather-column">
-                  <h3 id="city-name">CITY</h3>
-                  <h2 id="city-temp">
-                    Number
-                    <img
-                      class="svg-icon"
-                      src="./assets/images/svg/selsius-temperature-weather-svgrepo-com.svg"
-                    />
-                  </h2>
-
-                  <img
-                    class="svg-icon"
-                    id="city-weather-icon"
-                    class="city-weather-icon-result"
-                    src="./assets/images/clear.png"
-                  />
-
-                  <h4 id="city-weather-description">Clear</h4>
                   <h4>Humidity: <span id="city-humidity">50%</span></h4>
                   <h4>Wind: <span id="city-wind">10km/h</span></h4>
                   <h4>Feels Like: <span id="city-temp-feel">5 deg C</span></h4>
@@ -141,7 +162,7 @@
           </section>
 
           <!-- Start of Input Dashboard Links Section -->
-          <section class="add-links col-7 ">
+          <section class="add-links col-7">
             <h3>Add Your Links</h3>
             <div class="user-input">
               <label for="link-name">Name of Website/Link:</label>
@@ -161,9 +182,7 @@
             </div>
             <button id="add-link">Create Dashboard Link</button>
           </section>
-
-      </aside>  
-
+        </aside>
 
         <main class="links">
           <section class="links" id="user-links">
@@ -217,7 +236,7 @@
       </div>
     </div>
     <!-- end of modal -->
-  
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
