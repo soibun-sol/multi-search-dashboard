@@ -1,0 +1,101 @@
+
+/* Styling for the fixed icon */
+  .fixed-icon {
+    margin-bottom: 20px;
+  }
+  
+  .fixed-icon img {
+    width: 50px;  
+    height: 50px;
+  }
+
+/* Styling for the main container */
+  main.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling for user links container */
+#user-links, main.links {
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Styling for each link user inputs */
+.link-item {
+    position: relative;
+    background: transparent;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.link-item img {
+    width: 100%;
+    height: auto;  
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.link-item a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 25px;
+    word-break: break-word;
+}
+
+/* Media query to respond to medium screens/tablets/etc. */
+@media (max-width: 800px) {
+    .link-item {
+        width: 150px;
+    }
+    .link-item img {
+        max-height: 130px;
+    }
+}
+
+/* Media query to respond to mobile phones/smaller screens */
+@media (max-width: 500px) {
+    .link-item {
+        width: 120px; 
+    }
+    .link-item img {
+        max-height: 100px;
+    }
+}
+
+/* Button to remove links */
+.remove-link {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* When you hover over the button it turns red */
+.remove-link:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
