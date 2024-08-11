@@ -12,9 +12,26 @@ header {
 header .dropdown {
   color: var(--light-text);
   font-weight: var(--font-weight-bold);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: auto;
+  padding: 0.5rem;
 }
 
-header .dropdown a {
+.dropdown .dropdown-menu {
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-regular);
+  padding: 0.5rem;
+}
+
+.dropdown-menu li img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dropdown-menu a {
   color: var(--light-text);
   text-decoration: none;
   font-family: var(--body-font);
@@ -22,7 +39,7 @@ header .dropdown a {
   transition: all var(--transition-duration) var(--transition-timing);
 }
 
-header .dropdown button {
+.dropdown-menu button {
   background-color: var(--light-bg);
   color: var(--light-text);
   border: none;
