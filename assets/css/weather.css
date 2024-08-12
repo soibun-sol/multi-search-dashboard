@@ -19,13 +19,6 @@
 }
 
 .weather-wrapper label {
-  font-size: 0.5rem;
-  font-family: var(--body-font);
-  color: var(--dark-text);
-  padding: 0.5rem;
-  align-self: flex-start;
-  padding: 0;
-  margin: 0;
   aria-hidden: false;
   display: none;
 }

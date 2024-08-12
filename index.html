@@ -114,8 +114,8 @@
         />
         <!-- this is the page wrapper -->
 
-        <aside class="col-4">
-          <section class="weather col-7 row">
+        <aside class="col-4 col-xl-3 col-lg-4 col-md-3 col-sm-6 col-xs-12">
+          <section class="weather row">
             <div class="weather-wrapper">
               <div class="weather-column">
                 <h3 id="current-date">getFormattedDate()</h3>
@@ -191,7 +191,7 @@
           </section>
 
           <!-- Start of Input Dashboard Links Section -->
-          <section class="add-links col-7">
+          <section class="add-links">
             <h3>Add Your Links</h3>
             <div class="user-input">
               <label for="link-name">Name of Website/Link:</label>
@@ -248,14 +248,36 @@
             ></button>
           </div>
           <div class="modal-body">
-            <p>This is a brief description of the Multi-Search Dashboard.</p>
+            <h3>Multi-Search Dashboard Description</h3>
+            <p>
+              The Multi-Search Dashboard is a customizable browser homepage
+              designed to enhance your browsing experience by providing quick
+              access to multiple search engines, useful links, and real-time
+              weather information. It features a user-friendly interface with a
+              light and dark mode toggle, which remembers your theme preference
+              through local storage. The dashboard utilizes the Geolocation API
+              to detect your location and display relevant date, time, and
+              weather data. Users can refine their city search and save this
+              information for future visits. Additionally, the dashboard allows
+              you to save and manage bookmarks for easy access to your favorite
+              sites, all within a responsive design suitable for various screen
+              sizes.
+            </p>
+            <h3>Acknowledgments</h3>
+            <p>
+              We extend our gratitude to the Open Weather API for providing
+              accurate weather data and the Pexels API for offering high-quality
+              images that enhance the visual appeal of the dashboard. Your
+              contributions have been invaluable in creating a rich and engaging
+              user experience.
+            </p>
           </div>
         </div>
       </div>
     </div>
     <!-- end of modal -->
 
-    <!-- Start of Modal 2 -->
+    <!-- Start of Pexels Modal -->
     <div
       class="modal fade"
       id="pexels-image-modal"
@@ -269,7 +291,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="pexelsImageModalLabel">
-              MODAL PICTURE TITLE
+              PHOTO DETAILS
             </h5>
             <button
               type="button"
@@ -280,9 +302,12 @@
           </div>
           <div class="modal-body">
             <p>
-              This is a more detailed photo report describing the image that is
-              being displayed.
+              All images on this site can be found on Pexels.com. Thank you to
+              Pexels for providing a wonderful API for us to use!
+              <br /><br />
+              PHOTOGRAPHER: <span id="photographer-name"></span>
             </p>
+
             <div>
               <img
                 id="pexels-modal-image"

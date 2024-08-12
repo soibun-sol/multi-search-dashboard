@@ -50,8 +50,11 @@ async function fetchData(weatherDescription = "") {
     if (data.photos && data.photos.length > 0) {
       const randomIndex = Math.floor(Math.random() * data.photos.length);
       const weatherPhotoLink = data.photos[randomIndex].src.original;
+      const photographerName = data.photos[randomIndex].photographer;
       console.log(weatherPhotoLink);
       document.getElementById("hero-weather-img").src = weatherPhotoLink;
+      document.getElementById("photographer-name").textContent =
+        photographerName;
       pexelsModalImg.src = weatherPhotoLink;
     }
   } catch (error) {
