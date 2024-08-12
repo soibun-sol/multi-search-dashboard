@@ -16,20 +16,21 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/weather.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/add-links.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/toggle-button.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/css/toggle-button.css"
+    />
     <link rel="stylesheet" type="text/css" href="./assets/css/url-link.css" />
-
   </head>
 
   <body>
-
-  </div>
     <header>
       <nav>
-        <header class="py-2 mb-1 ">
+        <header class="py-2 mb-1">
           <div
             class="container-fluid d-grid gap-3 align-items-center border-bottom"
-            style="grid-template-columns: 4fr .2fr"
+            style="grid-template-columns: 4fr 0.2fr"
           >
             <div class="dropdown">
               <a
@@ -38,33 +39,66 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-               <svg class="bi me-2" width="40" height="32">
-                  <use xlink:href="#bootstrap"></use>
-                </svg>
+                <img
+                  src="./assets/images/hamburger.png"
+                  alt="Change Background"
+                />
               </a>
               <ul class="dropdown-menu text-small shadow">
-                <li>
-                  <a class="dropdown-item active" href="#" aria-current="page"
-                    >ABOUT MULTI-SEARCH DASHBOARD</a
+                <li class="dropdown-item">
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#weather-modal"
                   >
+                    <button class="menu-button">
+                      ABOUT MULTI-SEARCH DASHBOARD
+                      <img
+                        src="./assets/images/info.png"
+                        alt="Change Background"
+                      />
+                    </button>
+                  </a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
 
-                <li>
-                  <button id="hide-weather-deatils">
-                    HIDE WEATHER DETAILS
+                <li class="dropdown-item">
+                  <button id="hidden-weather-button" class="menu-button">
+                    SHOW/HIDE WEATHER DETAILS
+
+                    <img src="./assets/images/hide.png" />
                   </button>
                 </li>
-              </ul>
+                <li class="dropdown-item">
+                  <button id="change-background-btn" class="menu-button">
+                    CHANGE BACKGROUND
 
+                    <img
+                      src="./assets/images/svg/change.svg"
+                      alt="Change Background"
+                    />
+                  </button>
+                </li>
+                <li class="dropdown-item">
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#pexels-image-modal"
+                  >
+                    <button id="show-weather-details" class="menu-button">
+                      SHOW PHOTO DETAILS
+
+                      <img src="./assets/images/photo_details.png" /></button
+                  ></a>
+                </li>
+              </ul>
             </div>
           </div>
 
           <div class="toggle-container" id="toggle">
-            <input type="checkbox" id="mode-toggle" class="mode-toggle">
+            <input type="checkbox" id="mode-toggle" class="mode-toggle" />
             <label for="mode-toggle" class="toggle-label">
-                <span class="toggle-text">🌞</span>
-                <span class="toggle-text">🌜</span>
+              <span class="toggle-text">🌞</span>
+              <span class="toggle-text">🌜</span>
             </label>
           </div>
         </header>
@@ -80,59 +114,75 @@
         />
         <!-- this is the page wrapper -->
 
-        <aside class="col-4">
-          <section class="weather col-lg-7 col-sm- row h-150">
+        <aside class="col-4 col-xl-3 col-lg-4 col-md-3 col-sm-6 col-xs-12">
+          <section class="weather row">
             <div class="weather-wrapper">
-              <p>getDate() and Time:00 pm</p>
-              <label for="city">SEARCH WEATHER BY CITY:</label>
-              <div class="weather-row">
-                <input
-                  id="city"
-                  name="city"
-                  spellcheck="false"
-                  placeholder="Enter City Name"
-                />
-                <button id="city-search-btn">
-                  <img src="./assets/images/search.png" alt="Search Button" />
-                </button>
+              <div class="weather-column">
+                <h3 id="current-date">getFormattedDate()</h3>
+                <label for="city">Enter City Name</label>
+                <div class="weather-row">
+                  <input
+                    id="city"
+                    name="city"
+                    spellcheck="false"
+                    placeholder="Enter City Name"
+                  />
+                  <button id="city-search-btn">
+                    <img
+                      src="./assets/images/search-icon.png"
+                      alt="Search Button"
+                    />
+                  </button>
                 </div>
-                <div>
-                  <button id="change-background-btn">CHANGE BACKGROUND</button>
-                </div>  
-               <div>
-                <a
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#weather-image-modal"
-                  >Open Photo Details Modal</a
-                >
 
+                <div class="weather-row details">
+                  <div class="weather-column">
+                    <h3 id="city-name">CITY</h3>
+                    <h2 id="city-temp">
+                      Number
+                      <img
+                        class="svg-icon"
+                        src="./assets/images/svg/selsius-temperature-weather-svgrepo-com.svg"
+                      />
+                    </h2>
+                  </div>
+                  <div class="weather-column">
+                    <img
+                      class="svg-icon"
+                      id="city-weather-icon"
+                      class="city-weather-icon-result"
+                      src="./assets/images/clear.png"
+                    />
+
+                    <h4 id="city-weather-description">Clear</h4>
+                  </div>
+                </div>
               </div>
+
               <!-- Weather City Search Bar End -->
               <section class="hidden-weather">
                 <div class="weather-column">
-                  <h3 id="city-name">CITY</h3>
-                  <h2 id="city-temp">
-                    Number
-                    <img
-                      class="svg-icon"
-                      src="./assets/images/svg/selsius-temperature-weather-svgrepo-com.svg"
-                    />
-                  </h2>
+                  <div class="weather-row">
+                    <h4>Humidity:</h4>
+                    <h4 id="city-humidity">50%</h4>
+                  </div>
+                  <div class="weather-row">
+                    <h4>Wind:</h4>
+                    <h4 id="city-wind">10km/h</h4>
+                  </div>
 
-                  <img
-                    class="svg-icon"
-                    id="city-weather-icon"
-                    class="city-weather-icon-result"
-                    src="./assets/images/clear.png"
-                  />
-
-                  <h4 id="city-weather-description">Clear</h4>
-                  <h4>Humidity: <span id="city-humidity">50%</span></h4>
-                  <h4>Wind: <span id="city-wind">10km/h</span></h4>
-                  <h4>Feels Like: <span id="city-temp-feel">5 deg C</span></h4>
-                  <h4>Temp. High: <span id="city-temp-high">50 deg C</span></h4>
-                  <h4>Temp. Low: <span id="city-temp-low">1 deg C</span></h4>
+                  <div class="weather-row">
+                    <h4>Feels Like:</h4>
+                    <h4 id="city-temp-feel">5 deg C</h4>
+                  </div>
+                  <div class="weather-row">
+                    <h4>Temp. High:</h4>
+                    <h4 id="city-temp-high">50 deg C</h4>
+                  </div>
+                  <div class="weather-row">
+                    <h4>Temp. Low:</h4>
+                    <h4 id="city-temp-low">1 deg C</h4>
+                  </div>
                 </div>
               </section>
               <!-- end of hidden weather -->
@@ -141,7 +191,7 @@
           </section>
 
           <!-- Start of Input Dashboard Links Section -->
-          <section class="add-links col-7 ">
+          <section class="add-links">
             <h3>Add Your Links</h3>
             <div class="user-input">
               <label for="link-name">Name of Website/Link:</label>
@@ -161,9 +211,7 @@
             </div>
             <button id="add-link">Create Dashboard Link</button>
           </section>
-
-      </aside>  
-
+        </aside>
 
         <main class="links">
           <section class="links" id="user-links">
@@ -179,18 +227,71 @@
     </footer>
     <div
       class="modal fade"
-      id="weather-image-modal"
+      id="weather-modal"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"
-      aria-labelledby="weatherImageModalLabel"
+      aria-labelledby="weatherModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog col-8">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="weatherImageModalLabel">
-              MODAL PICTURE TITLE
+            <h5 class="modal-title" id="weatherModalLabel">
+              ABOUT MULTI-SEARCH DASHBOARD
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3>Multi-Search Dashboard Description</h3>
+            <p>
+              The Multi-Search Dashboard is a customizable browser homepage
+              designed to enhance your browsing experience by providing quick
+              access to multiple search engines, useful links, and real-time
+              weather information. It features a user-friendly interface with a
+              light and dark mode toggle, which remembers your theme preference
+              through local storage. The dashboard utilizes the Geolocation API
+              to detect your location and display relevant date, time, and
+              weather data. Users can refine their city search and save this
+              information for future visits. Additionally, the dashboard allows
+              you to save and manage bookmarks for easy access to your favorite
+              sites, all within a responsive design suitable for various screen
+              sizes.
+            </p>
+            <h3>Acknowledgments</h3>
+            <p>
+              We extend our gratitude to the Open Weather API for providing
+              accurate weather data and the Pexels API for offering high-quality
+              images that enhance the visual appeal of the dashboard. Your
+              contributions have been invaluable in creating a rich and engaging
+              user experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+
+    <!-- Start of Pexels Modal -->
+    <div
+      class="modal fade"
+      id="pexels-image-modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="pexelsImageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog col-10">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pexelsImageModalLabel">
+              PHOTO DETAILS
             </h5>
             <button
               type="button"
@@ -201,12 +302,15 @@
           </div>
           <div class="modal-body">
             <p>
-              This is a more detailed photo report describing the image that is
-              being displayed.
+              All images on this site can be found on Pexels.com. Thank you to
+              Pexels for providing a wonderful API for us to use!
+              <br /><br />
+              PHOTOGRAPHER: <span id="photographer-name"></span>
             </p>
+
             <div>
               <img
-                id="photo-modal-image"
+                id="pexels-modal-image"
                 class="img-fluid"
                 src="./assets/images/sky-1.jpg"
                 alt="Current Weather Image"
@@ -217,7 +321,7 @@
       </div>
     </div>
     <!-- end of modal -->
-  
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

@@ -3,6 +3,13 @@ const pexelsApiKey = "52YGXaVMgHkYq4IrAOHTvkECCHfOPSVZv9KvzJCcNcSZhLSW8W9vicIx";
 
 const backgroundImage = document.getElementById("hero-weather-img");
 const citySearchButton = document.getElementById("city-search-btn");
+const citySearchInput = document.getElementById("city");
+
+// Add listener to call function when CHANGE BACKGROUND button is clicked
+const changeBackgroundButton = document.getElementById("change-background-btn");
+
+// to update the modal image when the page loads we will grab it now
+const pexelsModalImg = document.getElementById("pexels-modal-image");
 
 // function to retrive weather data from local storage - called in fetchData function
 function retrieveWeatherData() {
@@ -43,9 +50,12 @@ async function fetchData(weatherDescription = "") {
     if (data.photos && data.photos.length > 0) {
       const randomIndex = Math.floor(Math.random() * data.photos.length);
       const weatherPhotoLink = data.photos[randomIndex].src.original;
+      const photographerName = data.photos[randomIndex].photographer;
       console.log(weatherPhotoLink);
       document.getElementById("hero-weather-img").src = weatherPhotoLink;
-      document.getElementById("photo-modal-image").src = weatherPhotoLink;
+      document.getElementById("photographer-name").textContent =
+        photographerName;
+      pexelsModalImg.src = weatherPhotoLink;
     }
   } catch (error) {
     // Log any errors to the console
@@ -59,4 +69,17 @@ fetchData();
 citySearchButton.addEventListener("click", () => {
   const description = "Beautiful Sunset";
   fetchData(description);
+});
+// Handle the case where the user presses enter instead of clicking the button
+citySearchButton.addEventListener("keydown", (e) => {
+  e.preventDefault();
+  if (e.key === "Enter") {
+    const description = e.target.value;
+    fetchData(description);
+  }
+});
+
+// Add listener to change background button
+changeBackgroundButton.addEventListener("click", () => {
+  fetchData();
 });

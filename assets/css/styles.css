@@ -2,8 +2,62 @@ header img {
   justify-content: flex-end;
 }
 
-header{
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   flex-direction: row;
+}
+
+
+
+.dropdown img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dropdown .dropdown-menu {
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-regular);
+  padding: 0.5rem;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-menu li img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dropdown-menu a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+button.menu-button {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  transition: all var(--transition-duration) var(--transition-timing);
 }
 
 .hero-weather {
@@ -30,7 +84,7 @@ header{
 }
 
 aside {
-  height: 40vh;
+  margin: 0;
 }
 
 .weather {
@@ -42,7 +96,6 @@ aside {
   justify-content: flex-start;
   align-items: flex-start;
   color: white;
-  margin-bottom: 5px;
   margin-right: auto;
   font-size: 1rem;
   border-radius: 0 0 2rem 0;
@@ -51,18 +104,20 @@ aside {
 
 .add-links {
   background-color: rgba(5, 4, 0, 0.495);
+  flex-basis: 1 1 auto;
   padding: 7px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: px;
   margin-right: auto;
   font-size: 1rem;
   border-radius: 0 2rem 0 0;
   box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
 .links {
+}
 
+@media screen and (max-width: 1200px) {
 }
 
 @media screen and (max-width: 768px) {
@@ -75,16 +130,16 @@ aside {
   }
 
   .hero-weather {
-  height: 100vh;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   .hero-weather-img {
@@ -102,30 +157,31 @@ aside {
     margin-top: 0px;
   }
 
-  .weather, .add-links, .links {
-    margin:  auto;
+  .weather,
+  .add-links,
+  .links {
+    margin: auto;
     width: 100%;
     margin-top: 0px;
   }
 
   .weather {
-    border-radius: 0 2rem 2rem 0; 
+    border-radius: 0 2rem 2rem 0;
     display: flex;
     flex-direction: column;
     padding: 10px;
     margin-bottom: 10px;
-    box-shadow: .5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .add-links {
     border-radius: 0 2rem 2rem 0;
     display: flex;
     flex-direction: column;
-    box-shadow: .5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .links {
- 
   }
 }
 
@@ -168,20 +224,21 @@ aside {
     width: 100%;
   }
 
-  .weather, .add-links {
-    margin:  auto;
+  .weather,
+  .add-links {
+    margin: auto;
     width: 100%;
     margin-top: 0px;
   }
 
   .weather {
-    font-size: 0.875rem; 
+    font-size: 0.875rem;
     padding: 10px;
     margin-top: 1px;
     margin-bottom: 10px;
     width: 120%;
     border-radius: 0 2rem 2rem 0;
-    box-shadow: .5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .add-links {
@@ -190,14 +247,13 @@ aside {
     margin-bottom: 10px;
     width: 120%;
     border-radius: 0 2rem 2rem 0;
-    box-shadow: .5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .links {
-
   }
 
-  #main{
+  #main {
     margin-left: 20%;
   }
 }
@@ -241,20 +297,21 @@ aside {
     width: 100%;
   }
 
-  .weather, .add-links {
-    margin:  auto;
+  .weather,
+  .add-links {
+    margin: auto;
     width: 100%;
     margin-top: 0px;
   }
 
   .weather {
-    font-size: 0.875rem; 
+    font-size: 0.875rem;
     padding: 10px;
     margin-bottom: 19px;
     width: 120%;
     margin: 0 auto;
     border-radius: 0 2rem 2rem 0;
-    box-shadow: .5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .add-links {
@@ -265,10 +322,9 @@ aside {
     width: 120%;
     margin: 0 auto;
     border-radius: 0 2rem 2rem 0;
-    box-shadow: .5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .links {
- 
   }
 }

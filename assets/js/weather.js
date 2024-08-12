@@ -24,6 +24,9 @@ const apiUrl =
 const inputLocationQuery = document.getElementById("city");
 const searchButton = document.getElementById("city-search-btn");
 const weatherIcon = document.getElementById("city-weather-icon");
+const currentDate = document.getElementById("current-date");
+const hiddenWeather = document.querySelector(".hidden-weather");
+const hiddenWeatherButton = document.getElementById("hidden-weather-button");
 
 // use the geolocation API to attempt to get the user's current location
 if (navigator.geolocation) {
@@ -83,10 +86,79 @@ function saveWeatherData(data) {
   // console.log("Weather Data Saved: ", data);
 }
 
+// function to get the date and format it
+function formatCurrentDate() {
+  const date = new Date(); // Get the current date and time
+
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  // destructure the date object to get at the values we want
+  const dayOfWeek = daysOfWeek[date.getDay()];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  let hours = date.getHours();
+  const minutes = date.getMinutes();
+  // Format the hours to 12-hour format - ampm is based on hours value
+  const formattedHours = hours % 12 || 12;
+  const ampm = hours >= 12 ? "pm" : "am";
+  // Format the minutes to have a leading zero if less than 10
+  const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+
+  const numberSuffix = (n) => {
+    if (n > 3 && n < 21) return "th"; // 4th-20th
+    // is the last digit of the number 1, 2, or 3?
+    switch (n % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  };
+
+  return `${dayOfWeek} ${month} ${day}${numberSuffix(
+    day
+  )} ${year} - ${formattedHours}:${formattedMinutes}${ampm} MST`;
+}
+
 // add listener to search button to activate getWeather function and API call
 searchButton.addEventListener("click", () => {
   const city = inputLocationQuery.value;
   getWeather(city);
+});
+
+hiddenWeatherButton.addEventListener("click", () => {
+  if (hiddenWeather.style.display === "none") {
+    hiddenWeather.setAttribute("style", "display: flex");
+  } else {
+    hiddenWeather.setAttribute("style", "display: none");
+  }
 });
 
 async function getWeather(city) {
@@ -106,6 +178,7 @@ async function getWeather(city) {
   // console.log("Weather Data Saved: ", data);
 
   // attach the data to the proper DOM elements
+  currentDate.innerHTML = formatCurrentDate();
   document.getElementById("city-name").innerHTML = data.name;
 
   document.getElementById("city-temp").innerHTML = `${Math.round(

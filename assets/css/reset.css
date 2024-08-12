@@ -22,7 +22,7 @@
   --dark-accent: #8dfc26;
 
   /* Common colors */
-  --success: #2ec4b6;
+  --success: #2d7c3a;
   --success-bg: #d1f0ed;
   --warning: #ffd166;
   --warning-bg: #fff3d9;
@@ -40,4 +40,25 @@
   /* Animation settings */
   --transition-duration: 1s;
   --transition-timing: ease;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--body-font);
+  border: 1px solid var(--light-text);
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--success);
+  color: var(--success);
+  outline: none;
 }
