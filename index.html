@@ -39,40 +39,54 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                DETAILS
+                <img
+                  src="./assets/images/hamburger.png"
+                  alt="Change Background"
+                />
               </a>
               <ul class="dropdown-menu text-small shadow">
-                <li>
-                  <a class="dropdown-item" href="#" aria-current="page"
-                    >ABOUT MULTI-SEARCH DASHBOARD</a
+                <li class="dropdown-item">
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#weather-modal"
                   >
+                    <button class="menu-button">
+                      ABOUT MULTI-SEARCH DASHBOARD
+                      <img
+                        src="./assets/images/info.png"
+                        alt="Change Background"
+                      />
+                    </button>
+                  </a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
 
-                <li>
-                  HIDE WEATHER DETAILS
-                  <button id="hidden-weather-button">
+                <li class="dropdown-item">
+                  <button id="hidden-weather-button" class="menu-button">
+                    SHOW/HIDE WEATHER DETAILS
+
                     <img src="./assets/images/hide.png" />
                   </button>
                 </li>
-                <li>
-                  CHANGE BACKGROUND
-                  <button id="change-background-btn">
+                <li class="dropdown-item">
+                  <button id="change-background-btn" class="menu-button">
+                    CHANGE BACKGROUND
+
                     <img
                       src="./assets/images/svg/change.svg"
                       alt="Change Background"
                     />
                   </button>
                 </li>
-                <li>
-                  SHOW PHOTO DETAILS
-
+                <li class="dropdown-item">
                   <a
                     href="#"
                     data-bs-toggle="modal"
-                    data-bs-target="#weather-image-modal"
+                    data-bs-target="#pexels-image-modal"
                   >
-                    <button id="show-weather-details">
+                    <button id="show-weather-details" class="menu-button">
+                      SHOW PHOTO DETAILS
+
                       <img src="./assets/images/photo_details.png" /></button
                   ></a>
                 </li>
@@ -101,10 +115,11 @@
         <!-- this is the page wrapper -->
 
         <aside class="col-4">
-          <section class="weather col-7 row h-150">
+          <section class="weather col-7 row">
             <div class="weather-wrapper">
               <div class="weather-column">
                 <h3 id="current-date">getFormattedDate()</h3>
+                <label for="city">Enter City Name</label>
                 <div class="weather-row">
                   <input
                     id="city"
@@ -147,11 +162,27 @@
               <!-- Weather City Search Bar End -->
               <section class="hidden-weather">
                 <div class="weather-column">
-                  <h4>Humidity: <span id="city-humidity">50%</span></h4>
-                  <h4>Wind: <span id="city-wind">10km/h</span></h4>
-                  <h4>Feels Like: <span id="city-temp-feel">5 deg C</span></h4>
-                  <h4>Temp. High: <span id="city-temp-high">50 deg C</span></h4>
-                  <h4>Temp. Low: <span id="city-temp-low">1 deg C</span></h4>
+                  <div class="weather-row">
+                    <h4>Humidity:</h4>
+                    <h4 id="city-humidity">50%</h4>
+                  </div>
+                  <div class="weather-row">
+                    <h4>Wind:</h4>
+                    <h4 id="city-wind">10km/h</h4>
+                  </div>
+
+                  <div class="weather-row">
+                    <h4>Feels Like:</h4>
+                    <h4 id="city-temp-feel">5 deg C</h4>
+                  </div>
+                  <div class="weather-row">
+                    <h4>Temp. High:</h4>
+                    <h4 id="city-temp-high">50 deg C</h4>
+                  </div>
+                  <div class="weather-row">
+                    <h4>Temp. Low:</h4>
+                    <h4 id="city-temp-low">1 deg C</h4>
+                  </div>
                 </div>
               </section>
               <!-- end of hidden weather -->
@@ -196,17 +227,48 @@
     </footer>
     <div
       class="modal fade"
-      id="weather-image-modal"
+      id="weather-modal"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"
-      aria-labelledby="weatherImageModalLabel"
+      aria-labelledby="weatherModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog col-8">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="weatherImageModalLabel">
+            <h5 class="modal-title" id="weatherModalLabel">
+              ABOUT MULTI-SEARCH DASHBOARD
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>This is a brief description of the Multi-Search Dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+
+    <!-- Start of Modal 2 -->
+    <div
+      class="modal fade"
+      id="pexels-image-modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="pexelsImageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog col-10">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pexelsImageModalLabel">
               MODAL PICTURE TITLE
             </h5>
             <button
@@ -223,7 +285,7 @@
             </p>
             <div>
               <img
-                id="photo-modal-image"
+                id="pexels-modal-image"
                 class="img-fluid"
                 src="./assets/images/sky-1.jpg"
                 alt="Current Weather Image"

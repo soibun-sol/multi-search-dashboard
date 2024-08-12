@@ -9,21 +9,25 @@ header {
   flex-direction: row;
 }
 
-header .dropdown {
-  color: var(--light-text);
-  font-weight: var(--font-weight-bold);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-right: auto;
-  padding: 0.5rem;
+
+
+.dropdown img {
+  width: 2rem;
+  height: 2rem;
 }
 
 .dropdown .dropdown-menu {
   font-family: var(--body-font);
   font-weight: var(--font-weight-regular);
   padding: 0.5rem;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dropdown-menu li img {
@@ -39,12 +43,16 @@ header .dropdown {
   transition: all var(--transition-duration) var(--transition-timing);
 }
 
-.dropdown-menu button {
+button.menu-button {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--light-bg);
   color: var(--light-text);
   border: none;
   padding: 0.5rem;
-  margin: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
   font-family: var(--body-font);
@@ -76,7 +84,7 @@ header .dropdown {
 }
 
 aside {
-  height: 40vh;
+  margin: 0;
 }
 
 .weather {
@@ -88,7 +96,6 @@ aside {
   justify-content: flex-start;
   align-items: flex-start;
   color: white;
-  margin-bottom: 5px;
   margin-right: auto;
   font-size: 1rem;
   border-radius: 0 0 2rem 0;
@@ -97,11 +104,11 @@ aside {
 
 .add-links {
   background-color: rgba(5, 4, 0, 0.495);
+  flex-basis: 1 1 auto;
   padding: 7px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: px;
   margin-right: auto;
   font-size: 1rem;
   border-radius: 0 2rem 0 0;
