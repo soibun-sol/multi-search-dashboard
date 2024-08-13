@@ -153,6 +153,14 @@ searchButton.addEventListener("click", () => {
   getWeather(city);
 });
 
+// add a listener for when the user presses enter instead of clicking the button
+inputLocationQuery.addEventListener("keydown", (event) => {
+  if (event.code === "Enter") {
+    const city = inputLocationQuery.value;
+    getWeather(city);
+  }
+});
+
 hiddenWeatherButton.addEventListener("click", () => {
   if (hiddenWeather.style.display === "none") {
     hiddenWeather.setAttribute("style", "display: flex");
@@ -168,8 +176,14 @@ async function getWeather(city) {
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
   var data = await response.json();
 
-  // console.log("City search weather Data: ", data);
-
+  console.log("City search weather Data: ", data);
+  if (data.message === "city not found") {
+    
+    document.getElementById("city-name").innerHTML = "City Not Found";
+    
+  } else {
+    document.getElementById("city-name").innerHTML = data.name;
+  }
   // save the city to local storage
   saveCity(city);
   // console.log("City Saved: ", city);
@@ -179,7 +193,6 @@ async function getWeather(city) {
 
   // attach the data to the proper DOM elements
   currentDate.innerHTML = formatCurrentDate();
-  document.getElementById("city-name").innerHTML = data.name;
 
   document.getElementById("city-temp").innerHTML = `${Math.round(
     data.main.temp

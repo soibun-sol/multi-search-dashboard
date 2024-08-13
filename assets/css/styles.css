@@ -73,7 +73,7 @@ button.menu-button {
   align-items: flex-start;
 }
 
-.hero-weather-img {
+.hero-weather-img{
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -83,9 +83,7 @@ button.menu-button {
   z-index: -10;
 }
 
-aside {
-  margin: 0;
-}
+
 
 .weather {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
