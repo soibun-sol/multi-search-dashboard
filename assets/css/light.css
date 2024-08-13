@@ -1,0 +1,23 @@
+.btn:hover{
+    background-color: #fff;
+    color: tomato;
+}
+
+nav{
+    color: #fff;
+}
+
+ .btn{
+    color:#000;
+    background-color: whitesmoke;
+ }
+
+ .dropdown-menu{
+    background-color: #000;
+    color: #000;
+ }
+
+
+body{
+    background-color: #fff;
+}
