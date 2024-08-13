@@ -4,6 +4,8 @@ const pexelsApiKey = "52YGXaVMgHkYq4IrAOHTvkECCHfOPSVZv9KvzJCcNcSZhLSW8W9vicIx";
 const backgroundImage = document.getElementById("hero-weather-img");
 const citySearchButton = document.getElementById("city-search-btn");
 const citySearchInput = document.getElementById("city");
+// same as in weather.js - inputLocationQuery
+const inputLocationPexels = document.getElementById("city");
 
 // Add listener to call function when CHANGE BACKGROUND button is clicked
 const changeBackgroundButton = document.getElementById("change-background-btn");
@@ -51,6 +53,7 @@ async function fetchData(weatherDescription = "") {
       const randomIndex = Math.floor(Math.random() * data.photos.length);
       const weatherPhotoLink = data.photos[randomIndex].src.original;
       const photographerName = data.photos[randomIndex].photographer;
+
       console.log(weatherPhotoLink);
       document.getElementById("hero-weather-img").src = weatherPhotoLink;
       document.getElementById("photographer-name").textContent =
@@ -70,12 +73,14 @@ citySearchButton.addEventListener("click", () => {
   const description = "Beautiful Sunset";
   fetchData(description);
 });
+
 // Handle the case where the user presses enter instead of clicking the button
-citySearchButton.addEventListener("keydown", (e) => {
-  e.preventDefault();
-  if (e.key === "Enter") {
-    const description = e.target.value;
-    fetchData(description);
+// add a listener for when the user presses enter instead of clicking the button
+inputLocationPexels.addEventListener("keydown", (event) => {
+  if (event.code === "Enter") {
+    const city = inputLocationQuery.value;
+    console.log("Pexels City: ", city);
+    fetchData(city);
   }
 });
 
