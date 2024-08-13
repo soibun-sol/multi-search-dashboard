@@ -28,9 +28,11 @@
 }
 
 /* Styling for each link user inputs */
+/* added the blur element and transparency in brackround */
 .link-item {
     position: relative;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
     width: 250px;
     display: flex;
     justify-content: center;
@@ -39,6 +41,9 @@
     text-align: center;
     padding: 10px;
     margin: 0;
+    border-radius: 15px; 
+    /* added this line to put a black shadow behind the link the last tag controls how dark the shadow is */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
 }
 
 .link-item img {
