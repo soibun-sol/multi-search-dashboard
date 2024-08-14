@@ -7,6 +7,7 @@ header {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  width: 100vw;
 }
 
 
@@ -14,6 +15,7 @@ header {
 .dropdown img {
   width: 2rem;
   height: 2rem;
+  
 }
 
 .dropdown .dropdown-menu {
@@ -59,6 +61,22 @@ button.menu-button {
   font-size: 1rem;
   transition: all var(--transition-duration) var(--transition-timing);
 }
+
+
+
+.btn{
+  width: 10vw;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  outline-style:auto;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0px 8px;
+  float: right;
+  
+}
+
 
 .hero-weather {
   height: 100vh;
