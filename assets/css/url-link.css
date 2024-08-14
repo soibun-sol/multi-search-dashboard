@@ -1,16 +1,15 @@
-
 /* Styling for the fixed icon */
-  .fixed-icon {
+.fixed-icon {
     margin-bottom: 20px;
-  }
+}
   
-  .fixed-icon img {
+.fixed-icon img {
     width: 50px;  
     height: 50px;
-  }
+}
 
 /* Styling for the main container */
-  main.links {
+main.links {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -28,7 +27,6 @@
 }
 
 /* Styling for each link user inputs */
-/* added the blur element and transparency in brackround */
 .link-item {
     position: relative;
     background: rgba(255, 255, 255, 0.1);
@@ -42,7 +40,6 @@
     padding: 10px;
     margin: 0;
     border-radius: 15px; 
-    /* added this line to put a black shadow behind the link the last tag controls how dark the shadow is */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
 }
 
@@ -57,9 +54,28 @@
 
 .link-item a {
     text-decoration: none;
-    color: whitesmoke;
+    color: black;
     font-size: 25px;
     word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for links without icons */
+.link-item a:not(:has(img)) {
+    justify-content: center;
+    height: 100%;
+    min-height: 100px;
+}
+
+.link-item a:not(:has(img)) span {
+    font-size: 50px; /* added this line to make the text larger in the icons without images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
 }
 
 /* Media query to respond to medium screens/tablets/etc. */
@@ -103,4 +119,24 @@
 /* When you hover over the button it turns red */
 .remove-link:hover {
     background-color: rgba(255, 0, 0, 1);
+}
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    font-size: 20px;
+}
+
+/* Ensure modal text is visible */
+.modal-body,
+.modal-footer button {
+    color: #000;
+}
+
+/* Style for modal buttons */
+.modal-footer .btn-link {
+    color: #0f61b9;
+}
+
+.modal-footer .btn-link:hover {
+    color: #0f61b9;
 }
