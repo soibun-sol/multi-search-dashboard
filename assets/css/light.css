@@ -21,3 +21,24 @@ nav{
 body{
     background-color: #fff;
 }
+
+.weather{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.432)),
+    url("./assets/images/sky-1.jpg");
+}
+
+.add-links{
+    background-color: rgba(255, 255, 255, 0.432);
+    
+}
+
+.weather-wrapper{
+    filter: brightness(100%) saturate(100%) invert(100%);
+}
+
+
+.input-wrapper{
+    filter: brightness(100%) saturate(100%) invert(100%);
+}
+
+
