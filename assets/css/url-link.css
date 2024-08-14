@@ -20,6 +20,7 @@ main.links {
 /* Styling for user links container */
 #user-links, main.links {
     background: transparent;
+    color: whitesmoke;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -121,9 +122,15 @@ main.links {
     background-color: rgba(255, 0, 0, 1);
 }
 
+.class-mb-0 {
+
+}
+
 .modal-content {
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
     font-size: 20px;
+    align-items: center;
+    padding: 10px;
 }
 
 /* Ensure modal text is visible */
