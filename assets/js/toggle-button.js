@@ -1,4 +1,4 @@
-const css_stylesheet = document.getElementById("theme-css");
+const css_stylesheet = document.querySelector("#theme-css");
 const toggle_btn = document.getElementById("toggle-theme");
 
 if (toggle_btn) toggle_btn.addEventListener("click", changeTheme);
