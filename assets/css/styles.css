@@ -15,7 +15,6 @@ header {
 .dropdown img {
   width: 2rem;
   height: 2rem;
-  
 }
 
 .dropdown .dropdown-menu {
@@ -132,6 +131,8 @@ aside {
   border-radius: 0 2rem 0 0;
   box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
+
+
 .links {
 }
 
