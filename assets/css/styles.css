@@ -10,8 +10,6 @@ header {
   width: 100vw;
 }
 
-
-
 .dropdown img {
   width: 2rem;
   height: 2rem;
@@ -65,19 +63,17 @@ button.menu-button {
   margin-right: 1rem;
 }
 
-.btn{
+.btn {
   width: 10vw;
   text-align: center;
   font-size: 1em;
   cursor: pointer;
-  outline-style:auto;
+  outline-style: auto;
   font-weight: 600;
   text-decoration: none;
   margin: 0px 8px;
   float: right;
-  
 }
-
 
 .hero-weather {
   height: 100vh;
@@ -92,7 +88,9 @@ button.menu-button {
   align-items: flex-start;
 }
 
-.hero-weather-img{
+.hero-weather-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/sky-1.jpg");
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -102,11 +100,8 @@ button.menu-button {
   z-index: -10;
 }
 
-
-
 .weather {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./assets/images/sky-1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   padding: 5px;
   display: flex;
   flex-direction: column;
@@ -131,7 +126,6 @@ button.menu-button {
   border-radius: 0 2rem 0 0;
   box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
-
 
 .links {
 }
