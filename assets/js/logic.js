@@ -65,6 +65,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const linkCreationModal = new bootstrap.Modal(document.getElementById('link-creation-modal'));
     const confirmLinkCreationButton = document.getElementById('confirmLinkCreation');
 
+    function hitEnter(event, nextInput) {
+        if (event.key === `Enter`) {
+            event.preventDefault();
+            nextInput.focus();
+        }
+    }
+
+    nameInput.addEventListener('keydown', (event) => hitEnter(event, urlInput));
+    urlInput.addEventListener('keydown', (event) => hitEnter(event, iconInput));
+    iconInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            addLinkButton.click();
+        }
+    });
+
     // add link functionality
     addLinkButton.addEventListener('click', function() {
         const name = nameInput.value.trim();
