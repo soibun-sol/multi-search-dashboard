@@ -132,20 +132,32 @@ aside {
   box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
 
-
-.links {
+@media screen and (max-width: 1200px){
+  .btn{
+    width: 15vw;
+    font-size: 1.1em;
+  }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px){
+  .btn{
+    width: 18vw;
+    font-size: 1.1em;
+  }
 }
 
 @media screen and (max-width: 768px) {
   header img {
-    justify-content: flex-end;
+    justify-content: flex;
   }
 
   header {
     flex-direction: row;
+  }
+
+  .btn{
+    width: 25vw;
+    font-size: 1em;
   }
 
   .hero-weather {
@@ -205,13 +217,11 @@ aside {
 }
 
 @media screen and (max-width: 576px) {
-  header img {
-    justify-content: flex-end;
-  }
 
-  header {
-    flex-direction: column;
-    align-items: center;
+  
+  .btn{
+    width: 20vw;
+    font-size: .6em;
   }
 
   .hero-weather {
@@ -237,7 +247,17 @@ aside {
     z-index: -10;
   }
 
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    float: right;
+  }
+
   aside {
+    flex-direction: row;
     height: auto;
     margin-top: 0;
     width: 100%;
@@ -248,6 +268,7 @@ aside {
     margin: auto;
     width: 100%;
     margin-top: 0px;
+    order: 1;
   }
 
   .weather {
@@ -270,10 +291,7 @@ aside {
   }
 
   .links {
-  }
-
-  #main {
-    margin-left: 20%;
+    
   }
 }
 
