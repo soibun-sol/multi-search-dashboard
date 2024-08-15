@@ -1,6 +1,6 @@
 # Multi-Search Dashboard
 
-[link](https://soibun-sol.github.io/multi-search-dashboard/)
+[Link to the Deployed Site](https://soibun-sol.github.io/multi-search-dashboard/)
 
 ## Description
 
@@ -63,10 +63,13 @@ To see the dashboard in action, navigate to the homepage and explore the feature
 
 ## Credits
 
-- Collaborators: [Your Collaborator's Name](https://github.com/your-collaborator)
-- Weather API: [Weather API Provider](https://weatherapi.com)
+- Collaborators:
+- [Greg Barker](https://github.com/savevsgames)
+- [Jake Walter](https://github.com/jakewalter080)
+- Weather API: [Weather API Documentation](https://weatherapi.com)
 - Geolocation API: [Geolocation API Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
-- Tutorials: [Tutorial Name](https://tutorial-link.com)
+- Pexels API: [Pexels API Documentation](https://www.pexels.com/api/documentation/)
+
 
 ## License
 
@@ -91,8 +94,6 @@ We welcome contributions from the community! To contribute:
 3. Make your changes and commit them: `git commit -m 'Add your feature'`.
 4. Push to the branch: `git push origin feature/your-feature`.
 5. Submit a pull request.
-
-For more detailed guidelines, refer to the [Contributor Covenant](https://www.contributor-covenant.org/).
 
 ## Tests
 
