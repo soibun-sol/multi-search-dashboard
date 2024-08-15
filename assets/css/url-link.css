@@ -1,172 +1,166 @@
 /* Styling for the fixed icon */
 .fixed-icon {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-  
+
 .fixed-icon img {
-    width: 50px;  
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 /* Styling for the main container */
 main.links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
 }
 
 /* Styling for user links container */
-#user-links, main.links {
-    background: transparent;
-    color: whitesmoke;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
+#user-links,
+main.links {
+  background: transparent;
+  color: whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
 }
 
 /* Styling for each link user inputs */
 .link-item {
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(1px);
-    width: 250px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    margin: 0;
-    border-radius: 15px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
-    overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  width: 250px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 .link-item img {
-    width: 100%;
-    height: auto;  
-    max-height: 150px;
-    object-fit: contain;
-    border-radius: 10px;
-    margin-bottom: 5px;
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 .link-item a {
-    text-decoration: none;
-    color: black;
-    font-size: 25px;
-    word-break: break-word;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  word-break: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Styling for links without icons */
 .link-item a:not(:has(img)) {
-    justify-content: center;
-    height: 100%;
-    min-height: 100px;
+  justify-content: center;
+  height: 100%;
+  min-height: 100px;
 }
 
 .link-item a:not(:has(img)) span {
-    font-size: 50px; /* added this line to make the text larger in the icons without images */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-align: center;
+  font-size: 50px; /* added this line to make the text larger in the icons without images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
 }
 
 /* Media query to respond to medium screens/tablets/etc. */
-@media (max-width: 992px){
-    .link-item {
-        width: 180px;
-    }
-    .link-item img {
-        max-height: 150px;
-    }
+@media (max-width: 992px) {
+  .link-item {
+    width: 180px;
+  }
+  .link-item img {
+    max-height: 150px;
+  }
 
-    #user-links, main.links {
-        flex-direction: column;
-        align-items: center;
-    }
-
+  #user-links,
+  main.links {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    .link-item {
-        width: 150px;
-    }
-    .link-item img {
-        max-height: 130px;
-    }
-
-    #user-links, main.links {
-        flex-direction: column;
-        align-items: center;
-    }
+  .link-item {
+    width: 150px;
+  }
+  .link-item img {
+    max-height: 130px;
+  }
 }
 
 /* Media query to respond to mobile phones/smaller screens */
 @media (max-width: 576px) {
-    .link-item {
-        width: 120px; 
-    }
-    .link-item img {
-        max-height: 100px;
-    }
-
-    #user-links, main.links{
-        flex-direction: column;
-        align-items: center;
-    }
+  .link-item {
+    width: 120px;
+  }
+  .link-item img {
+    max-height: 100px;
+  }
 }
 
 /* Button to remove links */
 .remove-link {
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    color: black;
-    border: none;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 /* When you hover over the button it turns red */
 .remove-link:hover {
-    background-color: rgba(255, 0, 0, 1);
+  background-color: rgba(255, 0, 0, 1);
 }
 
 .modal-content {
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
-    font-size: 20px;
-    align-items: center;
-    padding: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  align-items: center;
+  padding: 10px;
 }
 
 /* Ensure modal text is visible */
 .modal-body,
 .modal-footer button {
-    color: #000;
+  color: #000;
 }
 
 /* Style for modal buttons */
 .modal-footer .btn-link {
-    color: #0f61b9;
+  color: #0f61b9;
 }
 
 .modal-footer .btn-link:hover {
-    color: #0f61b9;
+  color: #0f61b9;
 }
