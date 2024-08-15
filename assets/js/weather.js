@@ -215,7 +215,7 @@ async function getWeather(city) {
   ).innerHTML = `${data.main.temp_max}°C`;
 
   // if block - could be a switch statement
-  // set the weather icon based on the weather data
+  // set the weather icon/description based on the weather data
   if (data.weather[0].main === "Clouds") {
     document.getElementById("city-weather-description").innerHTML = "Cloudy";
     weatherIcon.src =
