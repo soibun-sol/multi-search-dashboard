@@ -39,6 +39,7 @@
   justify-content: flex-start;
   display: table-row;
   font-family: monospace;
+  width: 80%
 }
 
 .add-links .user-input #link-url {
@@ -48,6 +49,7 @@
   justify-content: flex-start;
   display: table-row;
   font-family: monospace;
+  width: 80%
 }
 
 .add-links .user-input #link-icon {
@@ -57,6 +59,7 @@
   justify-content: flex-start;
   display: table-row;
   font-family: monospace;
+  width: 80%
 }
 
 #add-link {
