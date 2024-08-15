@@ -3,7 +3,6 @@ h3 {
     color: white;
     font-size: 19px;
     margin-top: 4%; 
-    font-family: 'Times New Roman', Times, serif; 
 }
 
 .add-links .user-input {
@@ -17,8 +16,7 @@ h3 {
 label { 
     font-size: 14px;
     text-align: center;
-    justify-content: center;
-    font-family: 'Times New Roman', Times, serif;
+    justify-content: center; 
 }
 
 .add-links .user-input #link-name{
@@ -27,7 +25,6 @@ label {
     background-color: whitesmoke;
     justify-content: flex-start;
     display: table-row;
-    font-family: monospace
 }
 
 .add-links .user-input #link-url{
@@ -36,7 +33,6 @@ label {
     background-color: whitesmoke;
     justify-content: flex-start;
     display: table-row;
-    font-family: monospace
 }
 
 .add-links .user-input #link-icon{
@@ -45,38 +41,40 @@ label {
     background-color: whitesmoke;
     justify-content: flex-start;
     display: table-row;
-    font-family: monospace
 }
 
 #add-link{
     text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    flex-direction: row;
+    margin-left: 100px;
     color: black;
+    outline-style: auto;
     font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
     box-shadow: .25rem .25rem 2.5rem rgba(0,0,0,0.5);
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 992px) {
     h3 {
       text-align: center;
       color: white;
-      font-size: 17px; 
+      font-size: 1.5rem; 
       margin-top: 3%; 
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input {
-      font-size: 14px; 
+      font-size: 1.2rem; 
       float: none; 
       margin-right: 0;
       color: white; 
     }
   
     label {
-      font-size: 12px; 
+      font-size: 1.2rem; 
       text-align: center;
       justify-content: center;
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input #link-name,
@@ -87,16 +85,16 @@ label {
       background-color: whitesmoke;
       justify-content: flex-start;
       display: block; 
-      font-family: monospace;
     }
   
     #add-link {
       text-align: center;
       color: black;
-      font-size: 14px; 
-      margin-top: 2px; 
-      box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.5); 
-      font-family: 'Times New Roman', Times, serif;
+      font-size: 1rem; 
+      margin-left: 60px;
+      margin-top: 5px;
+      padding: 5px; 
+      box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -104,13 +102,12 @@ label {
     h3 {
       text-align: center;
       color: white;
-      font-size: 16px;
+      font-size: 18px;
       margin-top: 4%;
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input {
-      font-size: 11px;
+      font-size: 18px;
       float: left;
       margin-right: auto;
       color: white;
@@ -118,10 +115,9 @@ label {
     }
   
     label {
-      font-size: 15px;
+      font-size: 18px;
       text-align: center;
       justify-content: center;
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input #link-name,
@@ -132,12 +128,13 @@ label {
       background-color: whitesmoke;
       justify-content: flex-start;
       display: table-row;
-      font-family: monospace;
+      margin-bottom: 5px;
     }
   
     #add-link {
-      width: 75%;
-      margin: 0;
+      width: 30vw;
+      margin: auto;
+      
       position:relative;
       margin-top: 10px;
       left: 50%;
@@ -145,8 +142,6 @@ label {
       transform: translate(-50%, -50%);  
       text-align: center;
       color: black;
-      font-size: 11px;
-      font-family: 'Times New Roman', Times, serif;
       box-shadow: 0.25rem 0.25rem 2.5rem rgba(0, 0, 0, 0.5);
     }
   }
@@ -155,13 +150,12 @@ label {
     h3 {
       text-align: center;
       color: white;
-      font-size: 17px; 
+      font-size: 20px; 
       margin-top: 2%; 
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input {
-      font-size: 11px; 
+      font-size: 18px; 
       float: none; 
       margin-right: 0;
       color: white;
@@ -173,7 +167,6 @@ label {
       font-size: 16px; 
       text-align: center;
       justify-content: center;
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input #link-name,
@@ -184,12 +177,10 @@ label {
       background-color: whitesmoke;
       justify-content: flex-start;
       display: block; 
-      font-family: monospace;
     }
   
     #add-link {  
-      width:80%;
-      length: 50%;  
+      width: 30vw;  
       text-align: center;
       color: black;
       font-size: 11px; 
@@ -197,7 +188,6 @@ label {
       left: 50%;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); 
-      font-family: 'Times New Roman', Times, serif;
       box-shadow: 0.25rem 0.25rem 1.5rem rgba(0, 0, 0, 0.5); 
     }
   }
@@ -208,7 +198,6 @@ label {
       color: white;
       font-size: 13px; 
       margin-top: 2%; 
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input {
@@ -224,7 +213,6 @@ label {
       font-size: 10px; 
       text-align: center;
       justify-content: center;
-      font-family: 'Times New Roman', Times, serif;
     }
   
     .add-links .user-input #link-name,
@@ -235,7 +223,6 @@ label {
       background-color: whitesmoke;
       justify-content: flex-start;
       display: block; 
-      font-family: monospace;
     }
   
     #add-link {
@@ -247,7 +234,6 @@ label {
       left: 50%;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      font-family: 'Times New Roman', Times, serif;
       box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5); 
     }
   }
