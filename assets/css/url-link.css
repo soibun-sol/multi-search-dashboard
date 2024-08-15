@@ -33,6 +33,7 @@ main.links {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(1px);
     width: 250px;
+    height: 200px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -42,6 +43,7 @@ main.links {
     margin: 0;
     border-radius: 15px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+    overflow: hidden;
 }
 
 .link-item img {
@@ -120,10 +122,6 @@ main.links {
 /* When you hover over the button it turns red */
 .remove-link:hover {
     background-color: rgba(255, 0, 0, 1);
-}
-
-.class-mb-0 {
-
 }
 
 .modal-content {
