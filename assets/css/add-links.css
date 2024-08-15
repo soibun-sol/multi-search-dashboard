@@ -1,3 +1,4 @@
+
 .add-links {
   display: flex;
   flex-direction: column;
@@ -13,6 +14,7 @@
   font-size: 1.5rem;
   margin-top: 4%;
   font-family: var(--body-font);
+
 }
 
 .add-links .user-input {
@@ -105,8 +107,9 @@
   label {
     font-size: 12px;
     text-align: center;
-    justify-content: center;
-  }
+  justify-content: center; 
+}
+
 
   .add-links .user-input #link-name,
   .add-links .user-input #link-url,
@@ -115,6 +118,7 @@
     color: black;
     background-color: whitesmoke;
     justify-content: flex-start;
+
     display: block;
     font-family: monospace;
   }
@@ -126,6 +130,7 @@
     margin-top: 2px;
     box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.5);
   }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -174,6 +179,7 @@
     font-size: 11px;
     box-shadow: 0.25rem 0.25rem 2.5rem rgba(0, 0, 0, 0.5);
   }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -206,15 +212,24 @@
     color: black;
     background-color: whitesmoke;
     justify-content: flex-start;
+
     display: block;
     font-family: monospace;
   }
 
+}
+
+
   #add-link {
     width: 80%;
-    length: 50%;
     text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    flex-direction: row;
+    margin-left: 100px;
     color: black;
+
     font-size: 11px;
     margin-top: 10px;
     left: 50%;
@@ -239,6 +254,7 @@
     color: white;
     padding: 5px;
     margin-bottom: 5px;
+
   }
 
   label {

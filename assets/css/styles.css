@@ -139,8 +139,10 @@ main {
   box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
 
+
 @media screen and (max-width: 992px) {
   #page-wrapper .hero-weather {
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -202,6 +204,7 @@ main {
     align-items: center;
     width: 100%;
     padding: 0 10px;
+
   }
 }
 
@@ -223,7 +226,17 @@ main {
     height: 100%;
   }
 
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    float: right;
+  }
+
   aside {
+    flex-direction: row;
     height: auto;
     margin-top: 0px;
     order: 2;
@@ -239,6 +252,7 @@ main {
     margin: auto;
     width: 100%;
     margin-top: 0px;
+    order: 1;
   }
 
   .weather {
@@ -255,6 +269,7 @@ main {
     flex-direction: column;
     box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
+
 }
 
 @media screen and (max-width: 576px) {

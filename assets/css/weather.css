@@ -147,7 +147,7 @@ img.city-weather-icon-result {
   .weather .hidden-weather {
     display: none; /*remove weather info on small screens */
   }
-
+  
   .weather img.city-weather-icon-result {
     height: 3rem;
     width: 3rem;

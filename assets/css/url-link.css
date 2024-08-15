@@ -82,22 +82,47 @@ main.links {
 }
 
 /* Media query to respond to medium screens/tablets/etc. */
-@media (max-width: 800px) {
+@media (max-width: 992px){
+    .link-item {
+        width: 180px;
+    }
+    .link-item img {
+        max-height: 150px;
+    }
+
+    #user-links, main.links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 768px) {
     .link-item {
         width: 150px;
     }
     .link-item img {
         max-height: 130px;
     }
+
+    #user-links, main.links {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Media query to respond to mobile phones/smaller screens */
-@media (max-width: 500px) {
+@media (max-width: 576px) {
     .link-item {
         width: 120px; 
     }
     .link-item img {
         max-height: 100px;
+    }
+
+    #user-links, main.links{
+        flex-direction: column;
+        align-items: center;
     }
 }
 
