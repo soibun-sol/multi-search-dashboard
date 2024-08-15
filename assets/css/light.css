@@ -1,44 +1,51 @@
-.btn:hover{
-    background-color: #fff;
-    color: tomato;
+.btn:hover {
+  background-color: #fff;
+  color: tomato;
 }
 
-nav{
-    color: #fff;
+nav {
+  color: #fff;
 }
 
- .btn{
-    color:#000;
-    background-color: whitesmoke;
- }
-
- .dropdown-menu{
-    background-color: #000;
-    color: #000;
- }
-
-
-body{
-    background-color: #fff;
+#toggle-theme {
+  color: #000;
+  background-color: whitesmoke;
+  margin-right: 1rem;
+  align-text: center;
+  cursor: pointer;
+  transition: all var(--transition-duration) var(--transition-timing);
 }
 
-.weather{
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.432)),
+#toggle-theme:hover {
+  box-shadow: 5 5 5px 0 rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-menu {
+  background-color: #fff;
+  color: #000;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+.weather {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.432)
+    ),
     url("./assets/images/sky-1.jpg");
 }
 
-.add-links{
-    background-color: rgba(255, 255, 255, 0.432);
-    
+.add-links {
+  background-color: rgba(255, 255, 255, 0.432);
 }
 
-.weather-wrapper{
-    filter: brightness(100%) saturate(100%) invert(100%);
+.weather-wrapper {
+  filter: brightness(100%) saturate(100%) invert(100%);
 }
 
-
-.input-wrapper{
-    filter: brightness(100%) saturate(100%) invert(100%);
+.input-wrapper {
+  filter: brightness(100%) saturate(100%) invert(100%);
 }
-
-

@@ -105,6 +105,11 @@ aside {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  order:1
+}
+
+main {
+  order:2;
 }
 
 .weather {
@@ -134,7 +139,71 @@ aside {
   box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
+  #page-wrapper .hero-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  weather-wrapper {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .weather,
+  .add-links,
+  .links {
+    margin: auto;
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .weather {
+    border-radius: 0 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 0 0;
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+  }
+
+  .add-links {
+    border-radius: 0 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
+  }
+
+  aside {
+    height: auto;
+    margin-top: 0px;
+    order: 2;
+    width: 100%;
+    flex-basis: 1 1 auto;
+  }
+
+  main {
+    order: 1;    
+    width: 100%;
+  }
+
+  header img {
+    justify-content: flex-end;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -146,32 +215,23 @@ aside {
     flex-direction: row;
   }
 
-  .hero-weather {
-    height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
+  #page-wrapper .hero-weather {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .hero-weather-img {
-    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
+    height: 100%;
   }
 
   aside {
     height: auto;
     margin-top: 0px;
+    order: 2;
+  }
+
+  main {
+    order: 1;
   }
 
   .weather,
@@ -197,136 +257,42 @@ aside {
     box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
-  .links {
-  }
+ 
 }
 
 @media screen and (max-width: 576px) {
-  header img {
-    justify-content: flex-end;
-  }
+ 
 
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-weather {
-    min-height: 100vh;
-    height: auto;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
+  #page-wrapper .hero-weather {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .hero-weather-img {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
     height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
   }
 
-  aside {
-    height: auto;
-    margin-top: 0;
-    width: 100%;
-  }
 
-  .weather,
   .add-links {
-    margin: auto;
-    width: 100%;
-    margin-top: 0px;
-  }
-
-  .weather {
-    font-size: 0.875rem;
-    padding: 10px;
-    margin-top: 1px;
-    margin-bottom: 10px;
-    width: 120%;
     border-radius: 0 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
-  }
-
-  .add-links {
     font-size: 0.875rem;
     padding: 10px;
     margin-bottom: 10px;
-    width: 120%;
-    border-radius: 0 2rem 2rem 0;
-    box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
-  .links {
-  }
+ 
 
-  #main {
-    margin-left: 20%;
-  }
 }
 
 @media screen and (max-width: 430px) {
-  header img {
-    justify-content: flex-end;
-  }
-
-  header {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .hero-weather {
-    height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .hero-weather-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-  }
-
-  aside {
-    height: auto;
-    margin-top: 0px;
-    width: 100%;
-  }
-
-  .weather,
-  .add-links {
-    margin: auto;
-    width: 100%;
-    margin-top: 0px;
-  }
+  
 
   .weather {
     font-size: 0.875rem;
     padding: 10px;
-    margin-bottom: 19px;
-    width: 120%;
-    margin: 0 auto;
     border-radius: 0 2rem 2rem 0;
     box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
@@ -334,14 +300,8 @@ aside {
   .add-links {
     font-size: 0.875rem;
     padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 120%;
-    margin: 0 auto;
     border-radius: 0 2rem 2rem 0;
     box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
-  .links {
-  }
 }
