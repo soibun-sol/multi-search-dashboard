@@ -139,10 +139,8 @@ main {
   box-shadow: 1rem 0.05rem 1rem rgba(0, 0, 0, 0.5);
 }
 
-
 @media screen and (max-width: 992px) {
   #page-wrapper .hero-weather {
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -200,11 +198,11 @@ main {
   .links {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     padding: 0 10px;
-
   }
 }
 
@@ -226,24 +224,22 @@ main {
     height: 100%;
   }
 
-  main{
+  main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
     float: right;
+    order: 1;
   }
 
   aside {
-    flex-direction: row;
+    flex-direction: column;
     height: auto;
     margin-top: 0px;
     order: 2;
-  }
-
-  main {
-    order: 1;
   }
 
   .weather,
@@ -270,6 +266,13 @@ main {
     box-shadow: 0.5rem 0.02rem 1rem rgba(0, 0, 0, 0.5);
   }
 
+  .links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 576px) {
