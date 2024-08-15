@@ -43,10 +43,11 @@
   padding: 0;
   font-size: 1rem;
   font-family: inherit;
+  height: auto;
 }
 
 .weather-row.details {
-  margin: auto;
+  margin: 0 auto;
   gap: 2rem;
 }
 
@@ -95,7 +96,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  padding: 2rem;
   font-size: 1rem;
   font-family: inherit;
   gap: 0.5rem;

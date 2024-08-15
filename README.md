@@ -59,9 +59,7 @@ The Multi-Search Dashboard offers several features to enhance your browsing expe
 
 To see the dashboard in action, navigate to the homepage and explore the features. Here's a screenshot of the dashboard:
 
-```md
-![Dashboard Screenshot](assets/images/screenshot.png)
-```
+[Screenshot](./assets/images/screenshot_5.png)
 
 ## Credits
 

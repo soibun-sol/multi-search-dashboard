@@ -16,7 +16,12 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/weather.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/add-links.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/dark.css" id="theme-css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/css/dark.css"
+      id="theme-css"
+    />
     <link rel="stylesheet" type="text/css" href="./assets/css/url-link.css" />
   </head>
 
@@ -35,7 +40,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img 
+                <img
                   src="./assets/images/hamburger.png"
                   alt="Change Background"
                 />
@@ -90,14 +95,16 @@
             </div>
           </div>
 
-          
-            <button id="toggle-theme" class = "btn btn-outline">Toggle Theme</button>
-        
+          <div class="theme-toggle-div">
+            <button id="toggle-theme" class="btn btn-outline">
+              Toggle Theme
+            </button>
+          </div>
         </header>
       </nav>
     </header>
 
-    <div class="container-fluid col-12">
+    <div class="container-fluid col-12" id="page-wrapper">
       <div class="hero-weather">
         <img
           id="hero-weather-img"
@@ -107,7 +114,7 @@
         <!-- this is the page wrapper -->
 
 
-        <aside class="col-4 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-6">
+        <aside class="col-4 col-xl-3 col-lg-4 col-md-12 col-sm-12 col-xs-12">
 
           <section class="weather row">
             <div class="weather-wrapper">
@@ -187,25 +194,29 @@
           <!-- Start of Input Dashboard Links Section -->
           <section class="add-links">
             <div class="input-wrapper">
-            <h3>Add Your Links</h3>
-            <div class="user-input">
-              <label for="link-name">Name of Website/Link:</label>
-              <input
-                type="text"
-                id="link-name"
-                placeholder="Enter website name"
-              />
+              <h3>Add Your Links</h3>
+              <div class="user-input">
+                <label for="link-name">Name of Website/Link:</label>
+                <input
+                  type="text"
+                  id="link-name"
+                  placeholder="Enter website name"
+                />
+              </div>
+              <div class="user-input">
+                <label for="link-url">Website URL/Link:</label>
+                <input
+                  type="url"
+                  id="link-url"
+                  placeholder="Enter website URL"
+                />
+              </div>
+              <div class="user-input">
+                <label for="link-icon">Image-Icon-Link:</label>
+                <input type="url" id="link-icon" placeholder="Enter icon URL" />
+              </div>
+              <button id="add-link">Create Dashboard Link</button>
             </div>
-            <div class="user-input">
-              <label for="link-url">Website URL/Link:</label>
-              <input type="url" id="link-url" placeholder="Enter website URL" />
-            </div>
-            <div class="user-input">
-              <label for="link-icon">Image-Icon-Link:</label>
-              <input type="url" id="link-icon" placeholder="Enter icon URL" />
-            </div>
-            <button id="add-link">Create Dashboard Link</button>
-          </div>
           </section>
         </aside>
 
@@ -319,16 +330,37 @@
     <!-- end of modal -->
 
     <!-- Start of Link Creation Confirm Modal-->
-    <div class="modal fade" id="link-creation-modal" tabindex="-1" aria-labelledby="linkCreationModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="link-creation-modal"
+      tabindex="-1"
+      aria-labelledby="linkCreationModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content rounded-3 shadow">
           <div class="modal-body p-4 text-center">
             <h2 class="mb-0">Please Confirm Link Creation</h2>
-            <p class="mb-0">You haven't added an image. Do you want to add a link with only the Website Name?</p>
+            <p class="mb-0">
+              You haven't added an image. Do you want to add a link with only
+              the Website Name?
+            </p>
           </div>
           <div class="modal-footer flex-nowrap p-0">
-            <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end" data-bs-dismiss="modal"><strong>Cancel</strong></button>
-            <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0" id="confirmLinkCreation">Create</button>
+            <button
+              type="button"
+              class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end"
+              data-bs-dismiss="modal"
+            >
+              <strong>Cancel</strong>
+            </button>
+            <button
+              type="button"
+              class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0"
+              id="confirmLinkCreation"
+            >
+              Create
+            </button>
           </div>
         </div>
       </div>
@@ -345,6 +377,5 @@
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/logic.js"></script>
     <script src="assets/js/toggle-button.js"></script>
-
   </body>
 </html>
