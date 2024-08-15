@@ -3,7 +3,7 @@ function saveLinksToLocalStorage() {
     const links = Array.from(document.getElementById('user-links').children).map(linkItem => ({
         name: linkItem.querySelector('span').textContent,
         url: linkItem.querySelector('a').href,
-        icon: linkItem.querySelector('img').src
+        icon: linkItem.querySelector('img')?.src // Changed to optional chaining
     }));
     localStorage.setItem('userLinks', JSON.stringify(links));
 }
@@ -20,7 +20,7 @@ function loadLinksFromLocalStorage() {
 }
 
 // Function to create a link element
-function createLinkElement(name, url, icon) {
+function createLinkElement(name, url, icon = null) { // Added default parameter
     const linkItem = document.createElement('div');
     linkItem.className = 'link-item';
 
@@ -28,13 +28,16 @@ function createLinkElement(name, url, icon) {
     linkAnchor.href = url;
     linkAnchor.target = '_blank';
 
-    const linkIcon = document.createElement('img');
-    linkIcon.src = icon;
-    linkIcon.alt = name;
-    linkAnchor.appendChild(linkIcon);
+    if (icon) { // Only create img element if icon is provided
+        const linkIcon = document.createElement('img');
+        linkIcon.src = icon;
+        linkIcon.alt = name;
+        linkAnchor.appendChild(linkIcon);
+    }
 
     const linkName = document.createElement('span');
     linkName.textContent = name;
+    linkAnchor.appendChild(linkName);
 
     const removeButton = document.createElement('button');
     removeButton.textContent = 'x';
@@ -45,35 +48,72 @@ function createLinkElement(name, url, icon) {
     });
 
     linkItem.appendChild(linkAnchor);
-    linkItem.appendChild(linkName);
     linkItem.appendChild(removeButton);
 
     return linkItem;
 }
 
-
 // Load saved links when the page loads
-document.addEventListener('DOMContentLoaded', loadLinksFromLocalStorage);
+document.addEventListener('DOMContentLoaded', function() {
+    loadLinksFromLocalStorage();
 
-// Add link functionality
-document.getElementById('add-link').addEventListener('click', function() {
-    const name = document.getElementById('link-name').value.trim();
-    const url = document.getElementById('link-url').value.trim();
-    const icon = document.getElementById('link-icon').value.trim();
+    const addLinkButton = document.getElementById('add-link');
+    const nameInput = document.getElementById('link-name');
+    const urlInput = document.getElementById('link-url');
+    const iconInput = document.getElementById('link-icon');
 
-    if (!name || !url || !icon) {
-        alert('Please fill in all fields.');
-        return;
+    const linkCreationModal = new bootstrap.Modal(document.getElementById('link-creation-modal'));
+    const confirmLinkCreationButton = document.getElementById('confirmLinkCreation');
+
+    function hitEnter(event, nextInput) {
+        if (event.key === `Enter`) {
+            event.preventDefault();
+            nextInput.focus();
+        }
     }
 
-    const linkItem = createLinkElement(name, url, icon);
-    document.getElementById('user-links').appendChild(linkItem);
+    nameInput.addEventListener('keydown', (event) => hitEnter(event, urlInput));
+    urlInput.addEventListener('keydown', (event) => hitEnter(event, iconInput));
+    iconInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            addLinkButton.click();
+        }
+    });
 
-    // Saves links to local storage after adding a new one
-    saveLinksToLocalStorage();
+    // add link functionality
+    addLinkButton.addEventListener('click', function() {
+        const name = nameInput.value.trim();
+        const url = urlInput.value.trim();
+        const icon = iconInput.value.trim();
 
-    // Clear input fields after creating the link
-    document.getElementById('link-name').value = '';
-    document.getElementById('link-url').value = '';
-    document.getElementById('link-icon').value = '';
+        if (!name || !url) {
+            alert('Website Name and URL Required');
+            return;
+        }
+
+        if (!icon) {
+            linkCreationModal.show();
+        } else {
+            createAndAddLink(name, url, icon);
+        }
+    });
+
+    confirmLinkCreationButton.addEventListener('click', function() {
+        const name = nameInput.value.trim();
+        const url = urlInput.value.trim();
+        createAndAddLink(name, url);
+        linkCreationModal.hide();
+    });
+
+    function createAndAddLink(name, url, icon = null) {
+        const linkItem = createLinkElement(name, url, icon);
+        document.getElementById('user-links').appendChild(linkItem);
+        saveLinksToLocalStorage();
+
+        // Clear input fields after creating the link
+        nameInput.value = '';
+        urlInput.value = '';
+        iconInput.value = '';
+    }
 });
